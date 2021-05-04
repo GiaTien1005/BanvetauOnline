@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Trang Chọn Chỗ Ngồi</title>
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Kết quả tìm kiếm với câu sql như sau</h1>
+		<hr>
+		use banvetauonline; </br>
+		select * </br>
+		from tau as t, toa_tau as tt, cho_ngoi as cn </br>
+		where </br>
+		t.ma_tau = tt.ma_tau </br>
+		and tt.ma_toa_tau = cn.ma_toa_tau </br>
+		and thoi_gian_chay </br> = <p th:text=${dto.thoiGianDi}>Ab</p>
+		and ma_ga_di </br> = <p th:text=${dto.maGaDi}></p>
+		and ma_ga_den </br> = <p th:text=${dto.maGaDen}></p>
+		order by t.ma_tau </br>
+		<a th:href = "@{/}"> Trở lại home </a>
+	</div>
+</body>
+</html>
